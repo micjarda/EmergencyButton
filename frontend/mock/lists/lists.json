@@ -1,0 +1,51 @@
+{
+  "001": {
+    "owner": "01",
+    "name": "Jídlo",
+    "hosts": ["01", "02", "03"],
+    "items": [
+      ["Jablko", false],
+      ["Banány", true],
+      ["Jahody", true],
+      ["Okurky", false]
+    ],
+    "category": "Výživa",
+    "tag": 2
+  },
+  "002": {
+    "owner": "02",
+    "name": "Oblečení",
+    "hosts": ["03", "01"],
+    "items": [
+      ["Boty", false],
+      ["Bunda", false],
+      ["Čepice", true],
+      ["Kalhoty", false],
+      ["Svetr", false],
+      ["Rukavice", false],
+      ["Šála", false]
+    ],
+    "category": "Šatník",
+    "tag": 1
+  },
+  "003": {
+    "owner": "03",
+    "name": "Nářadí",
+    "hosts": ["03"],
+    "items": [
+      ["Boty", false],
+      ["Bunda", false],
+      ["Čepice", true],
+      ["Vrtačka", false],
+      ["Šroubovák", false],
+      ["Pila", true],
+      ["Box", false],
+      ["Kladivo", false],
+      ["lepidlo", false],
+      ["let lampa", false],
+      ["světlo", false]
+    ],
+    "category": "Dílna",
+    "tag": 1
+  }
+}

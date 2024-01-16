@@ -1,0 +1,19 @@
+{
+  "uuSubAppDataStore": {
+    "primary": {
+      "type": "uuAppObjectStore",
+      "realization": "MongoDB",
+      "schemaMap": {
+        "backendMain": {
+          "realization": "dao/BackendMainMongo"
+        },
+        "call": {
+          "realization": "dao/CallMongo"
+        },
+        "patient": {
+          "realization": "dao/PatientMongo"
+        }
+      }
+    }
+  }
+}
