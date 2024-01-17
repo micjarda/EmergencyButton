@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   IconButton,
   Avatar,
@@ -20,7 +20,8 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-} from '@chakra-ui/react'
+  Link
+} from '@chakra-ui/react';
 import {
   FiSettings,
   FiMenu,
@@ -78,9 +79,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <Link key={link.name} href={link.link}>
+          <NavItem icon={link.icon}>
+            {link.name}
+          </NavItem>
+        </Link>
       ))}
     </Box>
   )
@@ -90,7 +93,6 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
     <Box
       as="a"
-      href="#"
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}>
       <Flex
@@ -180,8 +182,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
               <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
               <MenuDivider />
               <MenuItem>Sign out</MenuItem>
             </MenuList>

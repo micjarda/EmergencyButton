@@ -1,8 +1,11 @@
-import React from 'react'
-
+import { useCallList1Query } from "../../features/api/buttonapi"
 const Dashboard = () => {
+    const { data } = useCallList1Query()
     return (
-        <div>dashboard</div>
+        <div>
+            dashboard
+            <p>Data: {data}</p>
+        </div>
     )
 }
 

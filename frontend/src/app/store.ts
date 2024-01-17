@@ -12,23 +12,20 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 // Reducers
-import listSlice from "../features/slices/listSlice";
 import userSlice from "../features/slices/userSlice";
 // Api
-import { shopApi } from "../features/api/getshopdata";
+import { buttonApi } from "../features/api/buttonapi";
 const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedLists = persistReducer(persistConfig, listSlice);
 const persistedUsers = persistReducer(persistConfig, userSlice);
 
 const store = configureStore({
   reducer: {
-    lists: persistedLists,
     users: persistedUsers,
-    [shopApi.reducerPath]: shopApi.reducer,
+    [buttonApi.reducerPath]: buttonApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -42,7 +39,7 @@ const store = configureStore({
           REGISTER,
         ],
       },
-    }).concat(shopApi.middleware),
+    }).concat(buttonApi.middleware),
 });
 
 // Create the persistor
